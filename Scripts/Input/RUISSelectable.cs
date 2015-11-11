@@ -154,7 +154,10 @@ public class RUISSelectable : MonoBehaviour {
 			rayEndToPositionAtSelection = Vector3.zero;
 		else
 			rayEndToPositionAtSelection = transform.position - selector.selectionRayEnd;
-		distanceFromSelectionRayOrigin = (selector.selectionRayEnd - selector.selectionRay.origin).magnitude;
+		//distanceFromSelectionRayOrigin = (selector.selectionRayEnd - selector.selectionRay.origin).magnitude;
+        distanceFromSelectionRayOrigin = 0.2F;
+        Debug.Log("distanceFromSelectionRayOrigin = " + distanceFromSelectionRayOrigin);
+
 
         lastPosition = transform.position;
 
@@ -263,7 +266,7 @@ public class RUISSelectable : MonoBehaviour {
 			Vector3 selectorPositionChange = selector.transform.position - selectorPositionAtSelection;
 			return positionAtSelection + selectorPositionChange;
 		case RUISWandSelector.SelectionGrabType.AlongSelectionRay:
-			float clampDistance = distanceFromSelectionRayOrigin*0.01;
+			float clampDistance = distanceFromSelectionRayOrigin;
             if (clampToCertainDistance)
                 clampDistance = distanceToClampTo;
 			Vector3 rayEndPosition = selector.selectionRay.origin + clampDistance * selector.selectionRay.direction;
