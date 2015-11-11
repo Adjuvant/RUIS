@@ -156,7 +156,7 @@ public class RUISSelectable : MonoBehaviour {
 			rayEndToPositionAtSelection = transform.position - selector.selectionRayEnd;
 		//distanceFromSelectionRayOrigin = (selector.selectionRayEnd - selector.selectionRay.origin).magnitude;
         distanceFromSelectionRayOrigin = 0.2F;
-        Debug.Log("distanceFromSelectionRayOrigin = " + distanceFromSelectionRayOrigin);
+        //Debug.Log("distanceFromSelectionRayOrigin = " + distanceFromSelectionRayOrigin);
 
 
         lastPosition = transform.position;
